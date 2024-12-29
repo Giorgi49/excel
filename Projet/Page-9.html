@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Compte rendu</title>
+  <link rel="stylesheet" href="Excel.css">
+  <link rel="icon" href="Microsoft_Excel_2013-2019_logo.png">
+</head>
+<body>
+
+    <div class="button-bar">
+        <a href="Accueil.html"><img src="bouton-daccueil__1_-removebg-preview.png" class="acc"></a>
+      <h1 class="c">Bases d'Excel</h1>
+      <div class="dropdown">
+        <button class="c">Questions</button>
+        <div class="dropdown-content">
+          <a href="Page-1.html">Question 1</a>
+          <a href="Page-2.html">Question 2</a>
+          <a href="Page-3.html">Question 3</a>
+          <a href="Page-4.html">Question 4</a>
+          <a href="Page-5.html">Question 5</a>
+          <a href="Page-6.html">Question 6</a>
+          <a href="Page-7.html">Question 7</a>
+          <a href="Page-8.html">Question 8</a>
+          <a href="Page-9.html">Question 9</a>
+        </div>
+      </div>
+      <a href="définitions.html"><button class="c">Définitions</button></a>
+    </div>
+  <h1> Question 9</h1>
+<p class="text">=INDEX($B$9:$B$19;EQUIV(PETITE.VALEUR(SI($C$9:$C$19=$B$1;LIGNE($B$9:$B$19)-MIN(LIGNE($B$9:$B$19))+1);COLONNE(A1));LIGNE($B$9:$B$19)-MIN(LIGNE($B$9:$B$19))+1;0))</p>
+<p class="text">Nous n’avons pas trouvé comment faire avec la fonction <B>DECALER</B> et nous avons dû utiliser d’autre fonction non vue mais assez simple à comprendre. Tout d’abord, Nous prenons la fonction <B>INDEX </B>afin de retourner la valeur de la cellule correspondante qui se trouve dans la colonne des Prénoms. Pour trouver à quelle ligne se trouve la donnée voulue nous utilisons la fonction EQUIV qui va prendre comme valeur à chercher ; la plus petite valeur à l’aide de la fonction <B>PETITE.VALEUR</B> d’un tableau créer par la fonction <B>SI</B>. Cette fonction va d’abord vérifier si notre ville sélectionnée se trouve dans la liste des villes puis si c’est le cas et va nous renvoyer les valeurs des lignes où elle trouvera cette ville. Elle utilise pour cela la fonction ligne de la liste des prénoms qui va renvoyer les numéros de lignes des cellules sélectionnées puis y soustrais le plus petit numéro de la ligne pour enfin ajouter 1 à tous les numéros. Ensuite, nous repassons dans la fonction <B>PETITE.VALEUR</B> en indiquant la colonne de A1 qui sera variable pour étirer la formule et qui sera 1 puis 2 ... pour préciser à la fonction <B>PETITE.VALEUR</B> que nous voulons la 1ère puis 2ème ... plus petite valeur. En fin nous retournons dans la fonction <B>EQUIV</B> pour y indiquer sa plage de recherche maintenant que nous avons exprimé sa valeur à chercher, en y indiquant comme tout à l’heure la liste contenant les numéros de colonnes des prénoms moins le plus petit plus un. Pour finir nous pouvons fermer la fonction <B>EQUIV</B> après lui avoir indiqué que l’on veut une valeur exacte avec 0. Nous pouvons aussi fermer la fonction <B>INDEX</B> car il n’est pas obligatoire d’indiquer le numéro de colonne.</p>
+
+
+
+</body>
+</html>

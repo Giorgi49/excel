@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Compte rendu</title>
+  <link rel="stylesheet" href="Excel.css">
+  <link rel="icon" href="Microsoft_Excel_2013-2019_logo.png">
+</head>
+<body>
+    <div class="button-bar">
+        <a href="Accueil.html"><img src="bouton-daccueil__1_-removebg-preview.png" class="acc"></a>
+      <h1 class="c">Bases d'Excel</h1>
+      <div class="dropdown">
+        <button class="c">Questions</button>
+        <div class="dropdown-content">
+          <a href="Page-1.html">Question 1</a>
+          <a href="Page-2.html">Question 2</a>
+          <a href="Page-3.html">Question 3</a>
+          <a href="Page-4.html">Question 4</a>
+          <a href="Page-5.html">Question 5</a>
+          <a href="Page-6.html">Question 6</a>
+          <a href="Page-7.html">Question 7</a>
+          <a href="Page-8.html">Question 8</a>
+          <a href="Page-9.html">Question 9</a>
+        </div>
+      </div>
+      <a href="définitions.html"><button class="c">Définitions</button></a>
+    </div>
+
+<div class="container">
+<div class="text"><h1>Question 8</h1>
+    <p>Pour reporter les valeurs de chaque personne correspondante sachant qu’elles sont classées dans le même ordre dans les deux feuilles, en fonction du mois sélectionné nous avons utilisé la formule :</p>
+
+    <p>=DECALER(Données!A2:A9;0;EQUIV(B1;Données!B1:M1;0))</p>
+    <img src="scrn8.png"></img>
+    
+    <p> faire le menu déroulant, il nous a suffi d’utiliser l’option “Validation des données”. Notre formule utilise la fonction <B>DECALER</B> en prenant comme plage de référence la colonne des prénoms dans la feuille de données. Cette sélection se déplace ensuite de “0” lignes et du “numéro du mois” colonnes. Le numéro du mois est défini grâce à la fonction <B>EQUIV</B> étant donné qu’ils sont classés dans l’ordre. Celle-ci va chercher la valeur exacte de B1 (endroit où nous sélectionnons notre mois à l’aide du menu déroulant) dans la ligne où se trouve les mois et en partant de la 2ème colonne afin que l’on ait 1 = janvier / 2 = février ...</p>
+    
+    <p>Pour continuer, nous avons commencé par chercher ce que représentait le cumul puis nous avons compris que c’était la somme de toutes les valeurs qu’a effectué chaque personne du mois de janvier au mois sélectionné. Nous avons donc établi :</p>
+    
+    <p>=SOMME(DECALER(Données!$B2;0;0;1;EQUIV($B$1;Données!$B$1:$M$1;0)))</p>
+    <img src="scrn9.png"></img>
+    <p>Cette seconde formule fais la <B>SOMME</B> des valeur rapportées par <B>DECALER</B> qui prends comme référence la valeur de janvier et qui sans bouger la sélection l’agrandi en gardant 1 seule ligne mais en ajoutant les colonnes suivantes jusqu’à la même position relative qu'en haut du mois choisi. Nous pouvons notamment remarquer que cette formule n’est valable que pour la première personne mais que nous avons fixé les paramètres pour pouvoir l’étirer correctement à toutes.</p>
+</div>
+
+
+
+
+</body>
+</html>
